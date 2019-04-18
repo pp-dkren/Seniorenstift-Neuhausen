@@ -62,7 +62,7 @@ $red: #F40C21;
 $green: #C4D35D;
 $cyan: #157CB0;
 $body-background: $white;
-$body-font-color: $black;
+$body-font-color: $dark-blue;
 $body-font-family: 'Open Sans', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -103,9 +103,9 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 1rem;
 $header-styles: (
   small: (
-  'h1': ('font-size': 34),
-  'h2': ('font-size': 30),
-  'h3': ('font-size': 28),
+  'h1': ('font-size': 28),
+  'h2': ('font-size': 28),
+  'h3': ('font-size': 21),
   'h4': ('font-size': 20),
   'h5': ('font-size': 17),
   'h6': ('font-size': 16), ),

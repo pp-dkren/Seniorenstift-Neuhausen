@@ -49,13 +49,40 @@ img {
   height: auto;
 }
 
+// Textformatierung
+h2, h3 {
+  color: $dark-blue;
+}
+
+h2 {
+  margin-top: $grid-column-gutter / 2;
+}
+
+h3 {
+  margin-bottom: $grid-column-gutter / 1.5;
+}
+
 p, ul, ol {
-  font-size: rem-calc(21);
+  font-size: rem-calc(18);
 }
 
 @include breakpoint(xlarge) {
   p, ul, ol {
     font-size: rem-calc(26);
+  }
+}
+
+// Animation
+%btn-rotate {
+  .symbol {
+    transition: transform 0.15s ease-in-out;
+  }
+
+  &:focus,
+  &:hover {
+    .symbol {
+      transform: rotate(-45deg);
+    }
   }
 }
 
@@ -159,10 +186,9 @@ p, ul, ol {
   background: $blue;
   list-style-type: none;
   margin: 0;
-  padding: $grid-column-gutter / 2 0;
+  padding: $grid-column-gutter / 4 0;
 
   a {
-    color: $dark-blue;
     display: block;
     font-size: rem-calc(21);
     padding: $grid-column-gutter / 6 $grid-column-gutter / 2;
@@ -194,12 +220,12 @@ p, ul, ol {
 // Logo
 
 .logo {
-  margin-left: $grid-column-gutter * 2;
+  margin-left: $grid-column-gutter * 1.75;
   display: block;
-  padding: $grid-column-gutter / 6 0;
+  padding: $grid-column-gutter / 4 0;
 
   img {
-    width: rem-calc(225);
+    width: rem-calc(190);
     height: auto;
   }
 }
@@ -290,14 +316,31 @@ p, ul, ol {
   }
 
   .link {
+    @extend %btn-rotate;
     margin: 0 -$grid-column-gutter / 4;
+    text-decoration: none;
+  }
+
+  .link:focus,
+  .link:hover {
+    img {
+      transform: scale(1.15);
+    }
   }
 
   .text {
-    padding: $grid-column-gutter / 2.25 $grid-column-gutter / 4 $grid-column-gutter $grid-column-gutter / 4;
+    padding: $grid-column-gutter / 2.25 $grid-column-gutter / 4 $grid-column-gutter / 2 $grid-column-gutter / 4;
 
-    h3 {
-      margin-bottom: $grid-column-gutter;
+    p {
+      text-decoration: none;
+    }
+  }
+
+  .t-img {
+    overflow: hidden;
+
+    img {
+      transition: transform 0.15s;
     }
   }
 
@@ -321,15 +364,20 @@ p, ul, ol {
   background: $dark-blue;
   display: flex;
   flex-flow: column;
+  padding-bottom: $grid-column-gutter / 3;
+  padding-top: $grid-column-gutter / 3;
 
   .h-head {
     order: 2;
     color: $white;
+    margin-bottom: 0;
   }
 
   .h-category {
     order: 1;
     color: $white;
+    font-size: rem-calc(18);
+    margin-bottom: $grid-column-gutter / 8;
   }
 }
 // Inhalt Box
@@ -359,6 +407,16 @@ p, ul, ol {
 
 .info-box {
   background: $green;
+  padding-bottom: $grid-column-gutter / 2;
+
+  .i-img {
+    overflow: hidden;
+
+    img {
+      width: rem-calc(50);
+    }
+  }
+
 }
 // Teaser Boxen
 
